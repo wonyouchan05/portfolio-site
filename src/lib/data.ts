@@ -103,7 +103,7 @@ export const stackGroups: StackGroup[] = [
 
 export const about = {
   name: "원유찬",
-  shortName: "원찬",
+  shortName: "원유찬",
   avatarInitial: "원",
   role: "AI/SW 창업 준비생",
   heroTitle: "안녕하세요, 원유찬입니다",
