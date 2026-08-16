@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import ProjectNav from "@/components/ProjectNav";
+import LiveBadge from "@/components/LiveBadge";
+import { timeline, type TimelineLeaf } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "suhaeng-app — 원유찬",
   description: "수행평가 크라우드소싱 웹앱 suhaeng-app 케이스 스터디.",
 };
+
+const project = timeline.find(
+  (entry): entry is TimelineLeaf => !("isGroup" in entry) && entry.title === "suhaeng-app"
+);
 
 const STACK = ["Next.js", "TypeScript", "Tailwind", "Prisma", "Railway", "Claude API"];
 
@@ -107,6 +113,7 @@ export default function SuhaengAppCaseStudy() {
             </span>
             <span className="text-muted-2">·</span>
             <span className="text-muted">Railway 배포됨</span>
+            {project?.liveUrl && <LiveBadge href={project.liveUrl} />}
           </div>
 
           <p className="m-0 max-w-[560px] text-[15.5px] leading-[1.7] text-body">

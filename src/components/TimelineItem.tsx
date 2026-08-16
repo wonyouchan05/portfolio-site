@@ -1,10 +1,11 @@
 "use client";
 
-import { useId, useState, type ReactNode } from "react";
+import { useId, useState, type KeyboardEvent, type ReactNode } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import type { TimelineEntry, TimelineLeaf } from "@/lib/data";
 import { statusColor } from "@/lib/data";
+import LiveBadge from "./LiveBadge";
 
 function StatusBadge({ status }: { status: TimelineLeaf["status"] }) {
   const color = statusColor[status];
@@ -83,20 +84,28 @@ function LeafRow({ leaf, nested = false }: { leaf: TimelineLeaf; nested?: boolea
       }
       style={nested ? undefined : { borderColor: "var(--color-border)" }}
     >
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => setExpanded((v) => !v)}
+        onKeyDown={(e: KeyboardEvent<HTMLDivElement>) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setExpanded((v) => !v);
+          }
+        }}
         aria-expanded={expanded}
         aria-controls={bodyId}
-        className="flex w-full min-w-0 cursor-pointer select-none items-center gap-2.5 border-none bg-transparent p-0 text-left"
+        className="flex w-full min-w-0 cursor-pointer select-none items-center gap-2.5"
       >
         <StatusBadge status={leaf.status} />
+        {leaf.liveUrl && <LiveBadge href={leaf.liveUrl} />}
         {leaf.note && <span className="shrink-0 text-[11.5px] italic text-muted-2">{leaf.note}</span>}
         <HeadingTag className={`m-0 min-w-0 flex-1 truncate font-medium text-text ${nested ? "text-[15px]" : "text-[17px]"}`}>
           {leaf.title}
         </HeadingTag>
         <Chevron expanded={expanded} />
-      </button>
+      </div>
 
       <AnimatePresence initial={false}>
         {expanded && (
