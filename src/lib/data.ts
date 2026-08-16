@@ -45,7 +45,7 @@ export const timeline: TimelineEntry[] = [
       },
       {
         date: "2025.07–09",
-        title: "LG AI Youth Camp",
+        title: "LG AI Youth Camp 2기",
         status: "수상",
         desc: "인재상 수상. 이용약관을 드래그+우클릭으로 요약해주는 크롬 확장 프로그램 제작(Node.js/Express + OpenAI API). 우수 성과로 LG 홍보영상 나레이션 참여. Global Innovation Race(UC Berkeley)에 참가해 'AI Nurse' 프로토타입 제작.",
         tags: ["인재상", "Chrome Extension", "Node.js"],
@@ -125,13 +125,13 @@ export const about = {
   heroSubtitle: "AI/SW 창업을 준비하는 중3 개발자입니다",
   paragraphs: [
     "중학교 3학년이며, 충청남도과학고등학교 입시를 준비하고 있습니다. 장래희망은 AI/소프트웨어 분야 창업이고, 스스로 문제를 정의하고 직접 만드는 과정에 관심이 많습니다. Claude Code로 바이브코딩을 하며 Next.js, TypeScript, Tailwind 등 실제 서비스 개발 스택을 익혔습니다.",
-    "이용약관·개인정보라는 하나의 문제의식을 PartyRock, LG AI Youth Camp, 통계포스터대회까지 여러 방식으로 계속 파고들어 온 것처럼, 관심 있는 문제를 여러 각도로 탐구하는 걸 좋아합니다.",
+    "이용약관·개인정보라는 하나의 문제의식을 PartyRock, LG AI Youth Camp 2기, 통계포스터대회까지 여러 방식으로 계속 파고들어 온 것처럼, 관심 있는 문제를 여러 각도로 탐구하는 걸 좋아합니다.",
     "코딩뿐 아니라 통계·설문조사 같은 데이터 기반 접근도 함께 병행하며, 아이디어를 검증하는 과정 자체를 중요하게 생각합니다.",
   ],
 };
 
 export const contact = {
-  email: "wonchan@example.com",
+  email: "wonyouchan0505@gmail.com",
   github: "https://github.com/wonyouchan05",
 };
 

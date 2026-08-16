@@ -48,6 +48,22 @@ const ISSUES = [
     title: "이미지 인식 정확도",
     desc: "채점기준표의 체크박스 인식 오류. Claude Haiku에서 Sonnet으로 모델을 교체해 정확도 개선.",
   },
+  {
+    title: "관리자 데이터 노출",
+    desc: "전수 점검 중 관리자 전용 데이터가 인증 없이 먼저 노출되는 보안 허점을 발견해 수정.",
+  },
+  {
+    title: "잘못된 파라미터로 인한 500 에러",
+    desc: "존재하지 않는 학년/반 조합으로 요청 시 서버가 크래시하던 문제를, 안전하게 빈 목록을 반환하도록 수정.",
+  },
+  {
+    title: "허술했던 필수값 검증",
+    desc: "학년/반 값을 아예 안 보내도 통과되던 유효성 검사 허점을 발견해, 값이 없으면 명확히 에러를 반환하도록 수정.",
+  },
+  {
+    title: "AI 분석 실패 메시지 노출",
+    desc: "Claude API 호출이 실패했을 때 기술적인 원본 에러가 사용자 화면에 그대로 노출되던 문제를, 친화적 메시지로 교체.",
+  },
 ];
 
 function StackChip({ label }: { label: string }) {
@@ -146,11 +162,18 @@ export default function SuhaengAppCaseStudy() {
       <section className="border-t border-border-2 bg-bg-alt px-6 py-[clamp(50px,8vw,90px)] sm:px-10 lg:px-20">
         <div className="mx-auto max-w-[880px]">
           <SectionHeading>Problem</SectionHeading>
-          <p className="m-0 max-w-[640px] text-[15.5px] leading-[1.75] text-body">
-            학교에서 수행평가 날짜와 채점 기준을 매번 헷갈리고 놓치는 문제를 직접 겪었습니다.
-            선생님이 직접 입력해주는 구조는 현실적으로 기대하기 어려워서, 학생들이 스스로 정보를
-            등록하고 공유하는 크라우드소싱 방식으로 접근했습니다.
-          </p>
+          <div className="flex max-w-[640px] flex-col gap-3.5">
+            <p className="m-0 text-[15.5px] leading-[1.75] text-body">
+              학교에서 수행평가 날짜와 채점 기준을 매번 헷갈리고 놓치는 문제를 직접 겪었습니다.
+              선생님이 직접 입력해주는 구조는 현실적으로 기대하기 어려워서, 학생들이 스스로 정보를
+              등록하고 공유하는 크라우드소싱 방식으로 접근했습니다.
+            </p>
+            <p className="m-0 text-[15.5px] leading-[1.75] text-body">
+              만들고 나서도 정작 나부터 매번 &ldquo;봐야지, 봐야지&rdquo; 하고 잊어버리는 문제가
+              있었다. 지금은 반마다 꼼꼼히 챙기는 친구 한 명에게 등록을 부탁하는 방식으로 운영하고
+              있다.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -227,11 +250,19 @@ export default function SuhaengAppCaseStudy() {
       <section className="border-t border-border-2 bg-bg-alt px-6 py-[clamp(50px,8vw,90px)] sm:px-10 lg:px-20">
         <div className="mx-auto flex max-w-[880px] flex-col gap-6">
           <SectionHeading>회고</SectionHeading>
-          <p className="m-0 max-w-[640px] text-[15.5px] leading-[1.75] text-body">
-            &ldquo;AI가 다 짜준 코드&rdquo;가 아니라, 에러 로그를 직접 읽고 원인을 좁혀가는
-            과정을 배운 프로젝트입니다. 특히 배포 환경(Railway)과 로컬 환경의 차이에서 오는
-            문제들을 하나씩 진단하고 고치면서 실제 서비스 운영 감각을 익혔습니다.
-          </p>
+          <div className="flex max-w-[640px] flex-col gap-3.5">
+            <p className="m-0 text-[15.5px] leading-[1.75] text-body">
+              &ldquo;AI가 다 짜준 코드&rdquo;가 아니라, 에러 로그를 직접 읽고 원인을 좁혀가는
+              과정을 배운 프로젝트입니다. 특히 배포 환경(Railway)과 로컬 환경의 차이에서 오는
+              문제들을 하나씩 진단하고 고치면서 실제 서비스 운영 감각을 익혔습니다.
+            </p>
+            <p className="m-0 text-[15.5px] leading-[1.75] text-body">
+              바이브 코딩으로 기능을 만드는 것보다, 디자인을 다듬는 과정이 상상 이상으로 오래
+              걸리고 어렵다는 걸 이번에 알게 됐다. 색상 대비, 여백, 반응형 레이아웃처럼 눈에 안
+              띄지만 계속 확인해야 하는 디테일이 많았고, 이 과정에서 디자인을 보는 눈을 조금씩
+              익힐 수 있었다.
+            </p>
+          </div>
 
           <Link
             href="/#timeline-section"
