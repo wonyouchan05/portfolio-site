@@ -1,4 +1,5 @@
 import { contact } from "@/lib/data";
+import SectionTitle from "./SectionTitle";
 
 function GitHubIcon() {
   return (
@@ -18,9 +19,7 @@ export default function Contact() {
       className="border-t border-border-2 bg-bg-alt px-6 py-[clamp(50px,8vw,90px)] sm:px-10 lg:px-20"
     >
       <div className="mx-auto max-w-[1080px]">
-        <h2 className="m-0 mb-[clamp(24px,4vw,36px)] text-[clamp(20px,3vw,26px)] font-medium text-text">
-          Contact
-        </h2>
+        <SectionTitle number="04">Contact</SectionTitle>
         <div className="flex flex-wrap gap-3">
           <a
             href={`mailto:${contact.email}`}

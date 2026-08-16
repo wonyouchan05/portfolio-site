@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Timeline from "@/components/Timeline";
 import Stack from "@/components/Stack";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [unlocked, setUnlocked] = useState(false);
@@ -29,6 +30,8 @@ export default function Home() {
       <Stack />
 
       <Contact />
+
+      <Footer />
     </div>
   );
 }

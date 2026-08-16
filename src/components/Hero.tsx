@@ -1,4 +1,10 @@
-import { about } from "@/lib/data";
+import { about, timelineStats } from "@/lib/data";
+
+const summaryStats = [
+  { count: timelineStats.projectCount, label: "프로젝트" },
+  { count: timelineStats.awardCount, label: "수상" },
+  { count: timelineStats.liveCount, label: "서비스 배포" },
+].filter((stat) => stat.count > 0);
 
 export default function Hero() {
   return (
@@ -10,6 +16,11 @@ export default function Hero() {
         <p className="m-0 mt-3 text-[clamp(15px,2.4vw,19px)] font-normal text-muted">
           {about.heroSubtitle}
         </p>
+        {summaryStats.length > 0 && (
+          <p className="m-0 mt-4 text-[13px] text-muted-2">
+            {summaryStats.map((stat) => `${stat.count}개 ${stat.label}`).join(" · ")}
+          </p>
+        )}
       </div>
     </section>
   );

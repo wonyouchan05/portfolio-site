@@ -92,6 +92,18 @@ export const timeline: TimelineEntry[] = [
   },
 ];
 
+function flattenTimeline(entries: TimelineEntry[]): TimelineLeaf[] {
+  return entries.flatMap((entry) => ("isGroup" in entry && entry.isGroup ? entry.children : [entry]));
+}
+
+export const timelineLeaves: TimelineLeaf[] = flattenTimeline(timeline);
+
+export const timelineStats = {
+  projectCount: timelineLeaves.length,
+  awardCount: timelineLeaves.filter((leaf) => leaf.status === "수상").length,
+  liveCount: timelineLeaves.filter((leaf) => !!leaf.liveUrl).length,
+};
+
 export type StackGroup = {
   label: string;
   items: string[];
