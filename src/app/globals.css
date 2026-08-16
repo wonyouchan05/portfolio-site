@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #ffffff;
+  --color-bg-alt: #fafafa;
+  --color-card: #ffffff;
+  --color-text: #1a1a1a;
+  --color-body: rgba(26, 26, 26, 0.8);
+  --color-muted: rgba(26, 26, 26, 0.6);
+  --color-muted-2: rgba(26, 26, 26, 0.5);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-2: rgba(0, 0, 0, 0.06);
+  --color-chip-bg: rgba(26, 26, 26, 0.06);
+  --color-chip-text: rgba(26, 26, 26, 0.75);
+  --color-line: rgba(26, 26, 26, 0.12);
+  --color-dot-border: rgba(26, 26, 26, 0.3);
+  --color-nav-bg: rgba(255, 255, 255, 0.72);
+
+  --color-accent-purple: #8250df;
+  --color-accent-cyan: #0891b2;
+  --color-accent-green: #16a34a;
+  --color-accent-orange: #d97706;
+  --color-accent-pink: #db2777;
+  --color-accent-gold: #b8860b;
+  --color-accent-gray: #5a6472;
+  --color-accent-blue: #2563eb;
+}
+
+.dark {
+  --color-bg: #15161c;
+  --color-bg-alt: #1b1c23;
+  --color-card: #1e2029;
+  --color-text: #eceef2;
+  --color-body: rgba(236, 238, 242, 0.85);
+  --color-muted: rgba(236, 238, 242, 0.6);
+  --color-muted-2: rgba(236, 238, 242, 0.5);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-2: rgba(255, 255, 255, 0.08);
+  --color-chip-bg: rgba(255, 255, 255, 0.08);
+  --color-chip-text: rgba(236, 238, 242, 0.8);
+  --color-line: rgba(255, 255, 255, 0.14);
+  --color-dot-border: rgba(255, 255, 255, 0.32);
+  --color-nav-bg: rgba(21, 22, 28, 0.72);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-bg: var(--color-bg);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-card: var(--color-card);
+  --color-text: var(--color-text);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --color-muted-2: var(--color-muted-2);
+  --color-border: var(--color-border);
+  --color-border-2: var(--color-border-2);
+  --color-chip-bg: var(--color-chip-bg);
+  --color-chip-text: var(--color-chip-text);
+  --color-line: var(--color-line);
+  --color-dot-border: var(--color-dot-border);
+  --color-nav-bg: var(--color-nav-bg);
+
+  --color-accent-purple: var(--color-accent-purple);
+  --color-accent-cyan: var(--color-accent-cyan);
+  --color-accent-green: var(--color-accent-green);
+  --color-accent-orange: var(--color-accent-orange);
+  --color-accent-pink: var(--color-accent-pink);
+  --color-accent-gold: var(--color-accent-gold);
+  --color-accent-gray: var(--color-accent-gray);
+  --color-accent-blue: var(--color-accent-blue);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: var(--color-accent-purple);
+}
+
+::selection {
+  background: rgba(130, 80, 223, 0.25);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-purple);
+  outline-offset: 2px;
 }
