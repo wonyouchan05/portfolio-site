@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTheme } from "@/lib/theme-context";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 const NAV_LINKS = [
   { href: "#timeline-section", label: "Timeline" },
@@ -9,30 +9,6 @@ const NAV_LINKS = [
   { href: "#about-section", label: "About" },
   { href: "#contact-section", label: "Contact" },
 ];
-
-function SunIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="5" />
-      <line x1="12" y1="1" x2="12" y2="3" />
-      <line x1="12" y1="21" x2="12" y2="23" />
-      <line x1="4.2" y1="4.2" x2="5.6" y2="5.6" />
-      <line x1="18.4" y1="18.4" x2="19.8" y2="19.8" />
-      <line x1="1" y1="12" x2="3" y2="12" />
-      <line x1="21" y1="12" x2="23" y2="12" />
-      <line x1="4.2" y1="19.8" x2="5.6" y2="18.4" />
-      <line x1="18.4" y1="5.6" x2="19.8" y2="4.2" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
-    </svg>
-  );
-}
 
 function MenuIcon() {
   return (
@@ -45,7 +21,6 @@ function MenuIcon() {
 }
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -75,14 +50,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex shrink-0 items-center gap-1.5">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label="테마 전환"
-            className="flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full border-none bg-transparent text-text"
-          >
-            {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-          </button>
+          <ThemeToggleButton />
           <button
             type="button"
             onClick={() => setMobileMenuOpen((v) => !v)}

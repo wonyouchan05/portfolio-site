@@ -8,6 +8,7 @@ export type TimelineLeaf = {
   desc: string;
   tags: string[];
   link?: string;
+  caseStudyHref?: string;
 };
 
 export type TimelineGroup = {
@@ -86,6 +87,7 @@ export const timeline: TimelineEntry[] = [
     desc: "수행평가 크라우드소싱 웹앱. 학생들이 서로의 수행평가 자료를 공유하고 참고할 수 있는 서비스.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Prisma", "Railway"],
     link: "https://github.com/wonyouchan05/suhaeng-app",
+    caseStudyHref: "/projects/suhaeng-app",
   },
 ];
 

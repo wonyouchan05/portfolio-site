@@ -73,25 +73,27 @@
   --color-accent-blue: var(--color-accent-blue);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
 
-a {
-  color: var(--color-accent-purple);
-}
+  a {
+    color: var(--color-accent-purple);
+  }
 
-::selection {
-  background: rgba(130, 80, 223, 0.25);
-}
+  ::selection {
+    background: rgba(130, 80, 223, 0.25);
+  }
 
-:focus-visible {
-  outline: 2px solid var(--color-accent-purple);
-  outline-offset: 2px;
+  :focus-visible {
+    outline: 2px solid var(--color-accent-purple);
+    outline-offset: 2px;
+  }
 }

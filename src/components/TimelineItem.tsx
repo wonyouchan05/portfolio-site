@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type ReactNode } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import type { TimelineEntry, TimelineLeaf } from "@/lib/data";
 import { statusColor } from "@/lib/data";
@@ -107,18 +108,32 @@ function LeafRow({ leaf, nested = false }: { leaf: TimelineLeaf; nested?: boolea
                   <TagChip key={tag} label={tag} />
                 ))}
               </div>
-              {leaf.link && (
-                <a
-                  href={leaf.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-2 self-start rounded-full border px-4 py-2 text-[13.5px] font-medium no-underline"
-                  style={{ borderColor: "var(--color-accent-purple)", color: "var(--color-accent-purple)" }}
-                >
-                  <GitHubIcon />
-                  GitHub
-                </a>
-              )}
+              <div className="flex flex-wrap gap-2">
+                {leaf.caseStudyHref && (
+                  <Link
+                    href={leaf.caseStudyHref}
+                    className="inline-flex w-fit items-center gap-1.5 self-start rounded-full px-4 py-2 text-[13.5px] font-medium text-white no-underline"
+                    style={{ background: "var(--color-accent-purple)" }}
+                  >
+                    자세히 보기
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </Link>
+                )}
+                {leaf.link && (
+                  <a
+                    href={leaf.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 self-start rounded-full border px-4 py-2 text-[13.5px] font-medium no-underline"
+                    style={{ borderColor: "var(--color-accent-purple)", color: "var(--color-accent-purple)" }}
+                  >
+                    <GitHubIcon />
+                    GitHub
+                  </a>
+                )}
+              </div>
             </div>
           </ExpandBody>
         )}
