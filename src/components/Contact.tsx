@@ -24,7 +24,7 @@ export default function Contact() {
           <a
             href={`mailto:${contact.email}`}
             className={pillClass}
-            style={{ borderColor: "var(--color-accent-purple)", color: "var(--color-accent-purple)" }}
+            style={{ borderColor: "var(--color-accent-purple-text)", color: "var(--color-accent-purple-text)" }}
           >
             Email
           </a>
@@ -33,7 +33,7 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             className={pillClass}
-            style={{ borderColor: "var(--color-accent-purple)", color: "var(--color-accent-purple)" }}
+            style={{ borderColor: "var(--color-accent-purple-text)", color: "var(--color-accent-purple-text)" }}
           >
             <GitHubIcon />
             GitHub
