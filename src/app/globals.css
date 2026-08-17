@@ -92,7 +92,7 @@
   }
 
   a {
-    color: var(--color-accent-purple);
+    color: var(--color-accent-purple-text);
   }
 
   ::selection {

@@ -186,7 +186,7 @@ export default function SuhaengAppCaseStudy() {
               <div key={step.title} className="flex gap-4">
                 <div
                   className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[13px] font-medium"
-                  style={{ background: "var(--color-chip-bg)", color: "var(--color-accent-purple)" }}
+                  style={{ background: "var(--color-chip-bg)", color: "var(--color-accent-purple-text)" }}
                 >
                   {i + 1}
                 </div>
