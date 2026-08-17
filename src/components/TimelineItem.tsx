@@ -136,7 +136,7 @@ function LeafRow({ leaf, nested = false }: { leaf: TimelineLeaf; nested?: boolea
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex w-fit items-center gap-2 self-start rounded-full border px-4 py-2 text-[13.5px] font-medium no-underline"
-                    style={{ borderColor: "var(--color-accent-purple)", color: "var(--color-accent-purple)" }}
+                    style={{ borderColor: "var(--color-accent-purple-text)", color: "var(--color-accent-purple-text)" }}
                   >
                     <GitHubIcon />
                     GitHub

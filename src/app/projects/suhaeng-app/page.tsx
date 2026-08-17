@@ -149,7 +149,7 @@ export default function SuhaengAppCaseStudy() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[13.5px] font-medium no-underline"
-              style={{ borderColor: "var(--color-accent-purple)", color: "var(--color-accent-purple)" }}
+              style={{ borderColor: "var(--color-accent-purple-text)", color: "var(--color-accent-purple-text)" }}
             >
               <GitHubIcon />
               GitHub
@@ -267,7 +267,7 @@ export default function SuhaengAppCaseStudy() {
           <Link
             href="/#timeline-section"
             className="inline-flex w-fit items-center gap-1.5 text-[13.5px] font-medium no-underline"
-            style={{ color: "var(--color-accent-purple)" }}
+            style={{ color: "var(--color-accent-purple-text)" }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M11 18l-6-6 6-6" />

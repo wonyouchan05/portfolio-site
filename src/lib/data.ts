@@ -139,6 +139,6 @@ export const statusColor: Record<TimelineStatus, string> = {
   수상: "var(--color-accent-gold)",
   진행중: "var(--color-accent-blue)",
   완성: "var(--color-accent-green)",
-  "이용약관 테마": "var(--color-accent-purple)",
+  "이용약관 테마": "var(--color-accent-purple-text)",
   제출: "var(--color-accent-gray)",
 };

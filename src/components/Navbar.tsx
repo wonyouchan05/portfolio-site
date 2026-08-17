@@ -42,7 +42,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium text-muted no-underline transition-colors hover:text-accent-purple"
+              className="text-[13px] font-medium text-muted no-underline transition-colors hover:text-accent-purple-text"
             >
               {link.label}
             </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="py-2 text-[13px] font-medium text-muted no-underline transition-colors hover:text-accent-purple"
+              className="py-2 text-[13px] font-medium text-muted no-underline transition-colors hover:text-accent-purple-text"
             >
               {link.label}
             </a>
