@@ -49,6 +49,7 @@ export const timeline: TimelineEntry[] = [
         status: "수상",
         desc: "인재상 수상. 이용약관을 드래그+우클릭으로 요약해주는 크롬 확장 프로그램 제작(Node.js/Express + OpenAI API). 우수 성과로 LG 홍보영상 나레이션 참여. Global Innovation Race(UC Berkeley)에 참가해 'AI Nurse' 프로토타입 제작.",
         tags: ["인재상", "Chrome Extension", "Node.js"],
+        caseStudyHref: "/projects/lg-terms-master",
       },
       {
         date: "2026.03–현재",
@@ -65,6 +66,7 @@ export const timeline: TimelineEntry[] = [
     status: "제출",
     desc: "3인 팀으로 '잡월드 진로 도우미 AI(Career Quest Field)' 기획. 진로 체험 후 탐색이 단절되는 문제를 AI로 해결하는 서비스 제안, 제출 완료.",
     tags: ["기획", "AI Ideation"],
+    caseStudyHref: "/projects/suncheon-career-quest",
   },
   {
     date: "2025.09",
@@ -79,6 +81,7 @@ export const timeline: TimelineEntry[] = [
     status: "완성",
     desc: "아두이노 자율동아리를 결성해 TDS·탁도 센서를 직접 제작, 흐르는 물과 고인 물의 수질을 비교하는 프로젝트 진행 중. 소프트웨어뿐 아니라 하드웨어로 직접 측정하고 검증하는 실행력을 보여주는 프로젝트.",
     tags: ["Arduino", "센서", "자율동아리"],
+    caseStudyHref: "/projects/water-quality-study",
   },
   {
     date: "2026.06–08",
