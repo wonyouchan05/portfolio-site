@@ -57,6 +57,7 @@ export const timeline: TimelineEntry[] = [
         status: "완성",
         desc: "청소년 개인정보 보호와 이용약관 확인 습관을 주제로 177명 설문, 사전/사후 카드뉴스 개입 설계, 대응표본 t검정으로 분석. 이용약관이라는 관심사를 앱으로 만드는 데서 그치지 않고, 실제로 사람들의 습관이 바뀌는지까지 데이터로 검증한 프로젝트. 천안 예선 통과 후 현재 도대회 결과 대기 중.",
         tags: ["통계", "대응표본 t검정"],
+        caseStudyHref: "/projects/stats-poster",
       },
     ],
   },
