@@ -9,6 +9,7 @@ import Timeline from "@/components/Timeline";
 import Stack from "@/components/Stack";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FeedbackWidget from "@/components/FeedbackWidget";
 
 export default function Home() {
   const [unlocked, setUnlocked] = useState(false);
@@ -32,6 +33,8 @@ export default function Home() {
       <Contact />
 
       <Footer />
+
+      <FeedbackWidget />
     </div>
   );
 }
