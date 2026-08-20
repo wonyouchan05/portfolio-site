@@ -134,7 +134,7 @@ export default function WaterQualityStudyCaseStudy() {
           </p>
 
           <p className="m-0 max-w-[560px] text-[13.5px] leading-[1.7] text-muted">
-            원유찬 외 6명(윤성빈, 문준영, 하도형, 최성민, 김민준, 최지후) · 지도교사 이재은 선생님
+            원유찬 외 6명 · 지도 학교 선생님
           </p>
 
           <div className="flex flex-wrap gap-1.5">
