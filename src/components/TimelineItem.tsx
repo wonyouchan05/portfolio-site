@@ -19,10 +19,10 @@ function StatusBadge({ status }: { status: TimelineLeaf["status"] }) {
   );
 }
 
-function Chevron({ expanded }: { expanded: boolean }) {
+function Chevron({ expanded, className = "" }: { expanded: boolean; className?: string }) {
   return (
     <svg
-      className={`ml-auto shrink-0 text-muted-2 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+      className={`ml-auto shrink-0 text-muted-2 transition-transform duration-200 ${expanded ? "rotate-180" : ""} ${className}`}
       width="14"
       height="14"
       viewBox="0 0 24 24"
@@ -96,15 +96,17 @@ function LeafRow({ leaf, nested = false }: { leaf: TimelineLeaf; nested?: boolea
         }}
         aria-expanded={expanded}
         aria-controls={bodyId}
-        className="flex w-full min-w-0 cursor-pointer select-none items-center gap-2.5"
+        className="flex w-full min-w-0 flex-wrap cursor-pointer select-none items-center gap-x-2.5 gap-y-1.5 sm:flex-nowrap"
       >
         <StatusBadge status={leaf.status} />
         {leaf.liveUrl && <LiveBadge href={leaf.liveUrl} />}
         {leaf.note && <span className="shrink-0 text-[11.5px] italic text-muted-2">{leaf.note}</span>}
-        <HeadingTag className={`m-0 min-w-0 flex-1 truncate font-medium text-text ${nested ? "text-[15px]" : "text-[17px]"}`}>
+        <HeadingTag
+          className={`order-2 m-0 min-w-0 grow basis-full whitespace-normal font-medium text-text sm:order-none sm:basis-auto sm:truncate ${nested ? "text-[15px]" : "text-[17px]"}`}
+        >
           {leaf.title}
         </HeadingTag>
-        <Chevron expanded={expanded} />
+        <Chevron expanded={expanded} className="order-1 sm:order-none" />
       </div>
 
       <AnimatePresence initial={false}>
@@ -170,11 +172,13 @@ function GroupRow({ entry }: { entry: Extract<TimelineEntry, { isGroup: true }> 
         onClick={() => setExpanded((v) => !v)}
         aria-expanded={expanded}
         aria-controls={bodyId}
-        className="flex w-full min-w-0 cursor-pointer select-none items-center gap-2.5 border-none bg-transparent p-0 text-left"
+        className="flex w-full min-w-0 flex-wrap cursor-pointer select-none items-center gap-x-2.5 gap-y-1.5 border-none bg-transparent p-0 text-left sm:flex-nowrap"
       >
         <StatusBadge status={entry.status} />
-        <h3 className="m-0 min-w-0 flex-1 truncate text-[17px] font-medium text-text">{entry.title}</h3>
-        <Chevron expanded={expanded} />
+        <h3 className="order-2 m-0 min-w-0 grow basis-full whitespace-normal text-[17px] font-medium text-text sm:order-none sm:basis-auto sm:truncate">
+          {entry.title}
+        </h3>
+        <Chevron expanded={expanded} className="order-1 sm:order-none" />
       </button>
 
       <AnimatePresence initial={false}>
